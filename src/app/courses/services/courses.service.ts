@@ -12,6 +12,7 @@ export class CoursesService {
   constructor(private httpClient: HttpClient) {} // injeção de dependencia
   // é necessário importar esse módulo no app.module, para que possamos acessar os dados do DB em qualquer lugar
 
+  // pipe => um "cano" que faz o tratamento
   myList() {
     return this.httpClient.get<CourseInterface[]>(this.API).pipe(
       first(),
